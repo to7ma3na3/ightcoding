@@ -107,6 +107,7 @@ input, select {
 
 body {
   box-sizing: border-box;
+  font-family: "Noto Sans JP",sans-serif;
 }
 
 header {
@@ -115,7 +116,7 @@ header {
 }
 
 header .container {
-  width: min(1166px, 100%);
+  width: min(1160px, 100%);
   height: 95px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -123,8 +124,11 @@ header .container {
 }
 
 header .container img {
+  display: block;
+  box-sizing: border-box;
   margin: 0;
-  width: 104px;
+  width: calc(100% - 767px);
+  max-width: 105px;
 }
 
 header .container nav {
@@ -144,7 +148,7 @@ header .container .pc-menu li {
 }
 
 header .container .pc-menu li a {
-  display: inline-block;
+  /* display: inline-block; */
   text-decoration: none;
   color: black;
 }
@@ -179,60 +183,71 @@ header .overlay {
 }
 
 
-.main-pic {
+.main-pic-1 {
   width: 100%;
-  height: 500px;
+  height: auto;
   position: relative;
 }
 
-.main-pic .swiper-container {
-  width: min(1166px, 100%);
-  height: 500px;
+.main-pic-1 .swiper-container {
+  width: min(1160px, 100%);
+  height: auto;
   margin: 0 auto;
   display: flex;
 }
 
-.main-pic .swiper-wrapper {
+.main-pic-1 .swiper-container {
+  padding-bottom: 38px;
+}
+
+.main-pic-1 .swiper-wrapper {
   background-color: #fff;
 }
 
-.main-pic .swiper-slide {
-  display: flex;
+.main-pic-1 .swiper-slide {
   width: 100%;
-  /* height: 478px; */
+  height: auto;
+}
+.main-pic-1 .swiper-slide1 {
+  display: block;
   background-color: #fff;
 }
-  
-.main-pic .swiper-slide .long1 {
+ 
+.main-pic-1 .swiper-slide .long1 {
   display: block;
   width: 100%;
-  height: 478px;
+  height: auto;
   object-fit: cover;
 }
-
-.main-pic .swiper-slide .long2 {
+ .main-pic-1 .swiper-slide .long2 {
   display: block;
   width: 100%;
-  height: 478px;
+  height: auto;
   object-fit: cover;
 }
-
-.main-pic .swiper-slide .short {
+.main-pic-1 .swiper-slide .short {
   display: block;
   width: 100%;
-  height: 436px;
+  height: auto;
   object-fit: cover;
-  margin-top: 0px;
-  background-color: #fff;
+} 
+.main-pic-1 .swiper-slide .blank {
+  width: 100%;
+  height: auto;
 }
 
-.main-pic .swiper-pagination {
+
+.main-pic-1 .swiper-pagination {
   width: 70px;
   position: absolute;
-  top: 485px;
+  top: auto;
   left: calc(50% - 35px);
   color: #333;
 } 
+
+.main-pic-2 {
+  display: none;
+}
 
 
 .products {
@@ -242,7 +257,7 @@ header .overlay {
 
 .products .txth {
   margin: 0 auto;
-  margin-top: 105px;
+  margin-top: 55px;
   width: 100%;
   height: 50px;
   text-align: center;
@@ -262,28 +277,31 @@ header .overlay {
 }
 
 .products .container {
-  width: min(1166px, 100%);
+  max-width: 1160px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: min(545px, 50%) min(545px, 50%);
-  grid-template-rows: 350px 350px 350px;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
 }
 
 .products .container .pdt {
-  margin-left: 25px;
-  width: min(545px, 100%); 
-  margin-bottom: 15px;
+  margin-left: 15px;
+  max-width: 545px; 
+  margin-bottom: 20px;
   display: inline-flex;
 }
 
 .products .container .pdt .pic {
   width: 240px;
-  height: 240px;
+  height: auto;
 }
 
 .products .container .pdt img {
-  width: 240px;
+  display: block;
+  width: 220px;
+  margin-right: 20px;
+
 }
 
 .products .container .pdt .img4  {
@@ -294,7 +312,9 @@ header .overlay {
 
 .products .container .pdt .txt {
   width: calc(100% - 240px);
+  height: auto;
   margin-left: 20px;
+  padding-bottom: 10px;
 }
 
 .products .container .pdt .txt h3 {
@@ -322,7 +342,9 @@ header .overlay {
 .products .container .pdt .txt .btn {
   margin-top: 18px;
   display: block;
-  width: 200px;
+  width: 98%;
+  max-width: 200px;
+  /* max-width: 200px; */
   height: 38px;
   font-size: 12px;
   color: #000;
@@ -343,8 +365,8 @@ header .overlay {
 }
 
 .products > a {
-  margin: 0px auto;
   display: block;
+  margin: 0px auto;
   width: 254px;
   height: 57px;
   font-size: 12px;
@@ -369,8 +391,9 @@ header .overlay {
 .about {
   padding-top: 10px;
   width: 100%;
-  height: 554px;
+  height: auto;
   background-color:#F5F6F6;
+  padding-bottom: 20px;
 }
 
 .about .txth {
@@ -397,24 +420,25 @@ header .overlay {
 
 .about .container {
   margin: 50px auto;
-  width: 902px;
-  height: 320px;
+  max-width: 900px;
+  height: auto;
   position: relative;
 }
 
 .about .pic img {
   display: block;
-  width: 402px;
+  width: 400px;
   height: 320px;
   object-fit: cover;
   position: absolute;
-  top: 0px;
-  left: 500px;
+  top: 0;
+  right: 0;
 }
 
 .about .txt {
-  width: 470px;
-  height: 320px;
+  width: 460px;
+  max-width: calc(100% - 400px);
+  height: auto;
   letter-spacing: 2px;
 }
 
@@ -424,7 +448,7 @@ header .overlay {
   border-bottom: 1px solid #000;
 }
 .about .txt p {
-  margin-top: 32px;
+  margin-top: 30px;
   padding-right: 10px;
   box-sizing: border-box;
   font-size: 14px;
@@ -449,6 +473,10 @@ header .overlay {
   cursor: pointer;
   background-color: #000;
   color: #fff;
+}
+
+.about-2 {
+  display: none;
 }
 
 
@@ -595,24 +623,37 @@ header .overlay {
 } 
 
 .media .books {
-  width: min(958px, 100%);
-  height: 224px;
+  box-sizing: border-box;
   margin: 47px auto;
+  width: 100%;
+  max-width: 942px;
+  height: auto;
+  padding: 30px 30px;
   background-color: #eee;
 }
 
 .media .books .container {
-  padding: 35px 31px;
-  width: min(900px, 100%);
-  height: 160px;
-  display: flex;
+  max-width: 882px;
+  width: 100%;
+  height: auto;
+  display: flex; 
   justify-content: space-between;
 }
 
+/* .media .books .container {
+  height: auto;
+  display: grid;
+  grid-template-columns: 122px 122px 122px 122px 122px 122px;
+  grid-template-rows: 158px;
+  gap: 30px;
+  background-color:#c6f078;
+} */
+
 .media .books img {
   display: block;
-  width: 122px;
-  height: 158px;
+  max-width: 122px;
+  height: auto;
+  /* height: 158px; */
 }
 
 .media > a {
@@ -640,12 +681,14 @@ header .overlay {
 
 .info-pics {
   margin-top: 127px;
-  width: 100%
+  width: 100%;
+  padding-bottom: 65px;
+  background-color: #fff;
 }
 
 .info-pics .container {
   position: relative;
-  width: min(1169px, 100%);
+  width: min(1160px, 100%);
   height: 510px;
   margin: 0 auto;
   display: grid;
@@ -690,7 +733,6 @@ header .overlay {
   text-align: center;
   color: #fff;
 }
-
 
 .info-pics .container .guide {
   grid-row: 1;
@@ -854,7 +896,7 @@ footer > a  .material-icons {
 
 
 
-@media (max-width: 764px) {
+@media (max-width: 767px) {
 
   body {
     width: 100%;
@@ -872,9 +914,10 @@ footer > a  .material-icons {
   }
 
   header .container img {
-    margin: 12px 27px;
-    width: 40px;
-    height: 40px;
+    margin: 0 20px;
+    max-width: 60px;
+    width: calc(30px + (767px - 100%) / 4);
+    height: 60px;
     z-index: 10;
   }
 
@@ -1018,61 +1061,65 @@ footer > a  .material-icons {
 
   
 
-  .main-pic {
-    margin-top: 154px;
+  .main-pic-1 {
+    display: none;
+  }
+
+  .main-pic-2 {
+    display: block;
+    margin-top: 0px;
     width: 100%;
-    height: 340px;
+    height: auto;
     position: relative;
   }
   
-  .main-pic .swiper-container {
+  .main-pic-2 .swiper-container {
     width: 100%px;
-    height: 340px;
-    margin: 0 auto;
-    display: flex;
+    height: auto;
   }
   
-  /* .main-pic .swiper-wrapper {
-  } */
+  .swiper-container {
+    padding-bottom: 120px;
+}
   
-  .main-pic .swiper-slide {
+  .main-pic-2 .swiper-slide .back1 {
     display: block;
     width: 100%;
-    height: 340px;
+    height: auto;
+    padding-top: 66.6%;
+    background-color: #333;
+    background-image: url(../images/slider01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .main-pic-2 .swiper-slide .back2 {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 66.6%;
+    background-color: #333;
+    background-image: url(../images/slider02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .main-pic-2 .swiper-slide .back3 {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 66.6%;
+    background-color: #333;
+    background-image: url(../images/slider03.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
     
-  .main-pic .swiper-slide .long1 {
-    display: block;
-    width: 760px;
-    height: 316px;
-    object-fit: cover;
-    object-position: 100% 0%;
-    opacity: 1;
-  }
-
-  .main-pic .swiper-slide .long2 {
-    display: block;
-    width: 760px;
-    height: 316px;
-    object-fit: cover;
-    object-position: 100% 0%;
-    opacity: 1;
-  }
-  
-  .main-pic .swiper-slide .short {
-    display: block;
-    width: 760px;
-    height: 286px;
-    object-fit: cover;
-    object-position: 100% 20%;
-    margin-top: 0px;
-    opacity: 1;
-  }
-  
-  .main-pic .swiper-pagination {
+  .main-pic-2 .swiper-pagination {
     width: 70px;
     position: absolute;
-    top: 420px;
+    top: auto;
     left: calc(50% - 35px);
     color: #ccc;
     margin-bottom: 80px;
@@ -1081,42 +1128,71 @@ footer > a  .material-icons {
 
 
   .products {
-    padding-top: 75px;
+    display: block;
+    padding-top: 0px;
+    padding-bottom: 50px;
     width: 100%;
-    /* height: 1138px; */
-    /* background-color: rgb(245, 240, 206); */
   }  
 
+  .products .txth {
+    margin: 0 auto;
+    margin-top: 0px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .products .txth h2 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  
+  .products .txth p {
+    margin-top: 8px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
   .products .container {
-    width: min(764px, 97%);
-    margin: 36px auto;
+    width: 100%;
+    margin: 0px auto;
     display: block;
+  }
+
+  .products .container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 10px;
   }
   
   .products .container .pdt {
-    margin-left: 25px;
-    width: 95%; 
-    margin-bottom: 100px;
+    max-width: 100%; 
+    margin-bottom: 80px;
+    padding-left: 10px;
     display: inline-flex;
   }
   
   .products .container .pdt .pic {
-    width: 260px;
+    width: 50%;
     height: 260px;
   }
   
   .products .container .pdt img {
-    width: 300px;
+    width: 100%;
   }
   
-  .products .container .pdt .img4  {
+  .products .container .pdt .img4 {
     margin: 80px 60px;
     width: 140px;
     opacity: .3;
   }
   
   .products .container .pdt .txt {
-    width: calc(98% - 290px);
+    padding: 5px;
+    max-width: 100%;
     margin-left: 50px;
   }
   
@@ -1146,7 +1222,8 @@ footer > a  .material-icons {
   .products .container .pdt .txt .btn {
     margin-top: 18px;
     display: block;
-    width: 98%;
+    width: 100%;
+    max-width: 98%;
     height: 51px;
     font-size: 12px;
     line-height: 51px;
@@ -1164,7 +1241,7 @@ footer > a  .material-icons {
   .products > a {
     margin: 0px auto;
     display: block;
-    width: 90%;
+    width: 95%;
     height: 57px;
     font-size: 12px;
     line-height: 57px;
@@ -1172,7 +1249,7 @@ footer > a  .material-icons {
     letter-spacing: 1px;
     text-decoration: none;
     border: 1px solid #aaa;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
   }
   
   .products > a {
@@ -1180,62 +1257,79 @@ footer > a  .material-icons {
   }
 
 
+
   .about {
+    display: none;
+    /* margin-top: 20px; */
+  }
+
+  .about-2 {
+    display: block;
     width: 100%;
-    height: 886px;
+    height: auto;
     background-color: #F5F6F6;
   }
   
-  .about .txth {
+  .about-2 .txth {
     margin: 0 auto;
-    padding-top: 70px;
+    padding-top: 55px;
     width: 100%;
     height: 50px;
     text-align: center;
     margin-bottom: 30px;
   }
   
-  .about .txth h2 {
+  .about-2 .txth h2 {
     font-size: 24px;
     font-weight: 300;
     letter-spacing: 2px;
   }
   
-  .about .txth p {
+  .about-2 .txth p {
     margin-top: 8px;
     font-size: 12px;
     letter-spacing: 1px;
     margin-bottom: 30px;
   } 
   
-  .about .container {
+  .about-2 .container {
     display: block;
-    margin: 30px auto;
+    margin: 20px auto;
     width: 92%;
-    height: 670px;
-    position: static;
+    height: auto;
+    padding-bottom: 10px;
   }
 
-  .about .pic img {
+  .about-2 .pic {
     width: 100%;
-    height: 380px;
-    object-fit: cover;
-    position: static;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 52.5%;
+    background-color: #333;
+    background-image: url(../images/about01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .about-2 .pic img {
+    display: none;
   }
   
-  .about .txt {
+  .about-2 .txt {
     margin: 35px auto;
     width: 100%;
-    height: 340px;
+    height: auto;
     letter-spacing: 2px;
   }
   
-  .about .txt h3 {
-    font-size: 18px;
+  .about-2 .txt h3 {
+    font-size: 16px;
     padding-bottom: 26px;
     border-bottom: 1px solid #000;
   }
-  .about .txt p {
+  .about-2 .txt p {
     margin-top: 32px;
     padding-right: 10px;
     box-sizing: border-box;
@@ -1243,11 +1337,11 @@ footer > a  .material-icons {
     line-height: 1.7;
     letter-spacing: 1.5px;
   }
-  .about .txt a {
+  .about-2 .txt a {
     display: block;
     margin-top: 35px;
     font-size: 12px;
-    width: 700px;
+    width: 95%;
     height: 54px;
     font-size: 12px;
     letter-spacing: 1px;
@@ -1255,9 +1349,9 @@ footer > a  .material-icons {
     text-align: center;
     text-decoration: none;
     border: 1px solid #aaa;
-    margin-bottom: 127px;
+    margin-bottom: 25px;
   }
-  .about .txt a:hover {
+  .about-2 .txt a:hover {
     cursor: pointer;
     background-color: #fff;
     color: #000;
@@ -1266,12 +1360,12 @@ footer > a  .material-icons {
 
   .news {
     width: 100%;
+    margin-top: 20px;
   }
-  
   
   .news .txth {
     margin: 0 auto;
-    padding-top: 60px;
+    padding-top: 40px;
     width: 100%;
     height: 50px;
     text-align: center;
@@ -1280,7 +1374,7 @@ footer > a  .material-icons {
   
   .news .txth h2 {
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 100;
     letter-spacing: 2px;
   }
   
@@ -1294,7 +1388,6 @@ footer > a  .material-icons {
   .news .news-items {
     margin: 0px auto;
     width: 95%;
-    /* height: 280px; */
     display: flex;
     position: relative;
   }
@@ -1364,7 +1457,7 @@ footer > a  .material-icons {
   }
   
   .news > a {
-    margin: 95px auto;
+    margin: 50px auto;
     display: block;
     width: 92%;
     height: 54px;
@@ -1383,18 +1476,17 @@ footer > a  .material-icons {
   
   
 .media {
-  /* margin-top: 129px; */
   width: 100%;
+  margin-top: 120px;
 }
 
 .media .txth {
   margin: 0 auto;
-  margin-top: 129px;
+  margin-top: 0px;
   width: 100%;
   height: 50px;
   text-align: center;
-  margin-bottom: 30px;
-  /* background-color: rgb(176, 218, 220); */
+  margin-bottom: 20px;
 }
 
 .media .txth h2 {
@@ -1412,32 +1504,30 @@ footer > a  .material-icons {
 
 .media .books {
   width: 100%;
-  height: 652px;
-  margin: 0px auto;
-  background-color: rgb(183, 241, 236);
+  height: auto;
+  padding: 30px 10px;
 }
 
 .media .books .container {
-  margin: 30px auto;
-  width: 92%;
-  height: 588px;
+  padding: 0;
+  height: auto;
   display: grid;
-  grid-template-columns: 30% 30% 30%;
-  gap: 28px;
-  grid-template-rows: 281px 281px;
-  background-color:#F5F6F6;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-template-rows: auto auto;
 }
 
 .media .books img {
   display: block;
   width: 100%;
-  height: 281px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
-  margin-bottom: 30px;
+  object-position: center;
 }
 
 .media > a {
-  margin: 29px auto;
+  margin: 20px auto;
   display: block;
   width: 92%;
   height: 53px;
@@ -1458,13 +1548,13 @@ footer > a  .material-icons {
 
 
 .info-pics {
-  margin-top: 127px;
+  margin-top: 80px;
   width: 100%
 }
 
 .info-pics .container {
   width: 92%;
-  height: 1330px;
+  height: auto;
   margin: 0 auto;
   display: block;
 }
@@ -1473,13 +1563,23 @@ footer > a  .material-icons {
   text-decoration: none;
 }
 
-.info-pics .container .shop {
+.info-pics .container .shop-pic {
   display: block;
   width: 100%;
-  height: 367px;
+  height: 0px;
+  padding-top: 53.5%;
+  background-color: #333;
   background-image: url(../images/footer01.jpg);
   background-size: cover;
-  background-position: 100% 57%;
+  background-position: 50% 50%;
+  position: relative;
+}
+.info-pics .container .shop-pic .text {
+  width: 100%;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .info-pics .container .shop h3 {
   padding-top: 86px;
@@ -1506,14 +1606,23 @@ footer > a  .material-icons {
   color: #fff;
 }
 
-
-.info-pics .container .guide {
-  display: block;
+.info-pics .container .guide-pic {
+  margin-top: 25px;
   width: 100%;
-  height: 367px;
+  height: 0;
+  padding-top: 53.5%;
+  background-color: #333;
   background-image: url(../images/footer02.jpg);
   background-size: cover;
   background-position: 50% 50%;
+  position: relative;
+}
+.info-pics .container .guide-pic .text {
+  width: 100%;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .info-pics .container .guide h3 {
   padding-top: 86px;
@@ -1540,15 +1649,23 @@ footer > a  .material-icons {
   color: #fff;
 }
 
-
-.info-pics .container .wholesale {
-  display: block;
+.info-pics .container .wholesale-pic {
+  margin-top: 25px;
   width: 100%;
-  height: 367px;
+  height: 0;
+  padding-top: 53.5%;
+  background-color: #333;
   background-image: url(../images/footer03.jpg);
-  background-size: 100% 367px;
   background-size: cover;
   background-position: 50% 50%;
+  position: relative;
+}
+.info-pics .container .wholesale-pic .text {
+  width: 100%;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .info-pics .container .wholesale h3 {
   padding-top: 86px;
