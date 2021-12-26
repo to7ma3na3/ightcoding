@@ -238,12 +238,30 @@ header .overlay {
 
 
 .main-pic-1 .swiper-pagination {
-  width: 70px;
+  width: 100px;
   position: absolute;
   top: auto;
   left: calc(50% - 35px);
   color: #333;
 } 
+
+.main-pic-1 .swiper-pagination-black .swiper-pagination-bullet {
+  /* 全体のスタイル */
+  margin-left: 18px;
+	width: 9px; /* 幅 */
+	height: 9px; /* 高さ */
+	background: #aaa; /* 色 */
+	opacity: 0.5; /* 半透明（デフォルトでは0.2） */
+}
+/* 現在のスライドのスタイル */
+.main-pic-1 .swiper-pagination-black .swiper-pagination-bullet-active {
+	width: 9px; /* 幅 */
+	height: 9px; /* 高さ */
+	background: #444; /* 色 */
+	opacity: 1; /* 不透明 */
+}
+
+
 
 .main-pic-2 {
   display: none;
